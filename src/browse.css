@@ -1,4 +1,4 @@
-#mainContainer {
+#browserContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -8,17 +8,24 @@
     margin-right: 10%;
 }
 
-#searchForm {
+#categoryFilter {
     margin-top: 2%;
     margin-left: 20%;
     margin-right: 20%;
 }
 
-#searchForm :hover {
+#categoryFilter :hover {
+    cursor: pointer;
     background-color: aliceblue;
 }
 
-#searchButton {
-    color: blue;
-    border-color: blue;
+#areasFilter {
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#areasFilter :hover {
+    cursor: pointer;
+    background-color: aliceblue;
 }

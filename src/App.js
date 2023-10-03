@@ -3,7 +3,7 @@ import './App.css';
 import Header from './header';
 import Main from './main';
 import { Route, BrowserRouter as Router, Routes } from'react-router-dom';
-import Products from './products';
+import Browse from './browse';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" Component={Main}></Route>
-        <Route path="/products" Component={Products}></Route>
+        <Route path="/browse" Component={Browse}></Route>
       </Routes>
     </Router>
     </>
