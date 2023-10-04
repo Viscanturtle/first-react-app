@@ -31,7 +31,7 @@ function Main() {
   }
 
   useEffect(() => {
-    getMealsData('m'); // Change the letter for the meals here!
+    getMealsData('b'); // Change the letter for the meals here!
   }, []);
 
   async function handleSubmit(event) {
@@ -68,6 +68,7 @@ function Main() {
               image={item.strMealThumb}
               title={item.strMeal}
               description={item.strInstructions}
+              showFavorites={true}
             />
           ))
         ) : meals.length > 0 ? (
@@ -77,6 +78,7 @@ function Main() {
               image={item.strMealThumb}
               title={item.strMeal}
               description={item.strInstructions}
+              showFavorites={true}
             />
           ))
         ) : (

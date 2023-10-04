@@ -2,8 +2,14 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from './login';
+import LogoutButton from './logout';
 
 function Header() {
+  let {isAuthenticated} = useAuth0()
+
+  console.log(isAuthenticated)
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -13,6 +19,7 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/browse">Browse</Nav.Link>
+            <Nav.Link href="/favorites">Favorites</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -26,7 +33,8 @@ function Header() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-      </Container>
+        {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+        </Container>
     </Navbar>
   );
 }
